@@ -43,12 +43,12 @@ include_directories("external/fmt/include")
 target_link_libraries(test PRIVATE fmt::fmt-header-only)
 
 
-# # imgui
-# include_directories("external/imgui")
-# include_directories("external/imgui/backends")
-# file(GLOB SRC_IMGUI CONFIGURE_DEPENDS external/imgui/*.cpp)
-# set(SRC_IMGUI_BACKEND external/imgui/backends/imgui_impl_glfw.cpp external/imgui/backends/imgui_impl_opengl3.cpp)
-# target_sources(test PRIVATE ${SRC_IMGUI} ${SRC_IMGUI_BACKEND})
+# imgui
+include_directories("external/imgui")
+include_directories("external/imgui/backends")
+file(GLOB SRC_IMGUI CONFIGURE_DEPENDS external/imgui/*.cpp)
+set(SRC_IMGUI_BACKEND external/imgui/backends/imgui_impl_glfw.cpp external/imgui/backends/imgui_impl_opengl3.cpp)
+target_sources(test PRIVATE ${SRC_IMGUI} ${SRC_IMGUI_BACKEND})
 
 # glfw
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)

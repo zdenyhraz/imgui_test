@@ -31,6 +31,7 @@ try
     if (not window)
       throw std::runtime_error("GLFW create window failed");
     glfwMakeContextCurrent(window);
+    gladLoadGL();
     glfwSwapInterval(1);
     glfwSetKeyCallback(window, GLFWKeyCallback);
 
